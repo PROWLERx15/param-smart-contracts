@@ -3,9 +3,14 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
-remapings = [
-    '@openzepplin/contracts/=lib/openzepplin-contracts/contracts',
+remappings = [
+    '@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/',
     'foundry-devops/=lib/foundry-devops',
+]
+
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
 ]
 
 [rpc_endpoints]
@@ -13,10 +18,5 @@ mainnet = "${RPC_MAINNET}"
 sepolia = "${RPC_SEPOLIA}"
 base_mainnet= "${RPC_BASE_MAINNET}"
 base_sepolia = "${RPC_BASE_SEPOLIA}"
-
-fs_permissions = [
-    { access = "read", path = "./broadcast" },
-    { access = "read", path = "./reports" },
-]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
